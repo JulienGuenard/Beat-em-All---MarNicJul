@@ -1,59 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
-public class Enemy_Move : MonoBehaviour
+public class Enemy_Move : Enemy_Heritage
 {
-    Rigidbody2D rb;
-    Animator animator;
-    SpriteRenderer spriteR;
     public float speed;
+    public float randomMoveDelay;
+    public GameObject randomPoint;
+    Vector3 movement;
 
     float x = 0;
     float y = 0;
 
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteR = GetComponent<SpriteRenderer>();
-    }
+    GameObject player;
+
+    GameObject randomPointCurrent;
+    bool canMoveRandomly = true;
 
     void Update()
     {
-        MoveInput();
-        MoveFlip();
-        MoveAnimation();
-        MoveVelocity();
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) return;
+
+        if (enemy_IA.enemyIA_MoveState == EnemyIA_MoveState.FollowPlayer)   FollowPlayer();
+
+        if (randomPointCurrent == null && randomPoint != null) randomPointCurrent = Instantiate(randomPoint);
+        if (randomPointCurrent == null) return;
+
+        if (enemy_IA.enemyIA_MoveState == EnemyIA_MoveState.MoveRandomly)   MoveRandomly();
+        if (enemy_IA.enemyIA_MoveState == EnemyIA_MoveState.MoveToItem)     MoveToItem();
+        if (enemy_IA.enemyIA_MoveState == EnemyIA_MoveState.Flee)           Flee();
     }
 
-    void MoveInput()
+    void FollowPlayer()
     {
-        x = Input.GetAxisRaw("Horizontal");
-        y = Input.GetAxisRaw("Vertical");
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+
+        rb.velocity = direction * speed;
     }
 
-    void MoveFlip()
+    void MoveRandomly()
     {
-        if (x > 0) spriteR.flipX = false;
-        if (x < 0) spriteR.flipX = true;
-    }
+        rb.velocity = Vector3.zero;
 
-    void MoveAnimation()
-    {
-        if (x != 0 || y != 0)
+        if (canMoveRandomly)
         {
-            animator.SetBool("isMoving", true);
+            Vector3 randomPointPos = new Vector3(Random.Range(-2f, 2f), Random.Range(-0.5f, -1), 0);
+            randomPointCurrent.transform.position = randomPointPos;
+            canMoveRandomly = false;
+            StartCoroutine(MoveRandomlyDelay());
         }
-        else
-        {
-            animator.SetBool("isMoving", false);
-        }
+
+        Vector3 direction = (randomPointCurrent.transform.position - transform.position).normalized;
+
+        if (randomPointCurrent.transform.position.magnitude < transform.position.magnitude + 0.1f
+        && randomPointCurrent.transform.position.magnitude > transform.position.magnitude - 0.1f) return;
+
+        rb.velocity = direction * speed;
+
+        
     }
 
-    void MoveVelocity()
+    IEnumerator MoveRandomlyDelay()
     {
-        rb.velocity = new Vector3(x, y, 0) * speed * Time.deltaTime;
+        yield return new WaitForSeconds(randomMoveDelay);
+        canMoveRandomly = true;
+    }
+
+    void MoveToItem()
+    {
+
+    }
+
+    void Flee()
+    {
+
     }
 }

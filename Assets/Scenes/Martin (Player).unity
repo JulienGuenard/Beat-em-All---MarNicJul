@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 259706618}
   - component: {fileID: 259706617}
   - component: {fileID: 259706616}
+  - component: {fileID: 259706619}
   m_Layer: 0
   m_Name: EnemyTestDummy
   m_TagString: Enemy
@@ -203,6 +204,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &259706619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259706615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53957f292cd547a44889b757be5dd57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &268490892
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +610,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCombat: {fileID: 1952039332}
+  selectedEnemy: {fileID: 0}
+  _canBeAttacked: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ddd7cf23fab1cf4ab3cee96ea03ee28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AttackCollider: {fileID: 739826941}
+  attackCollision: {fileID: 739826944}
+  attackDamage: 20
 --- !u!1 &2146535523
 GameObject:
   m_ObjectHideFlags: 0

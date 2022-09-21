@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    private Animator _animator;
+    private Animator animator;
 
-    [SerializeField] GameObject _AttackCollider;
+    public AttackCollision attackCollision;
 
-    public AttackCollision _attackCollisionScript;
+    private EnemyHealth enemyHealth;
 
-    public EnemyHealth _enemyHealthScript;
+    public int attackDamage = 20;
     
 
     
@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
     }
 
@@ -41,18 +41,21 @@ public class PlayerCombat : MonoBehaviour
     {
         
         //play attack animation
-        _animator.SetTrigger("Attack1"); // activate trigger in animator
+        animator.SetTrigger("Attack1"); // activate trigger in animator
 
         // Detect enemies in range of attack
-        if(_attackCollisionScript._canBeAttacked == true)
-        
-        // Inflict damage on enemies
-        _enemyHP--;
+        if (attackCollision._canBeAttacked == true)
 
-        if (_enemyHP <= 0)
+        // Inflict damage on enemies
         {
-            Destroy(gameObject);
+            enemyHealth = attackCollision.selectedEnemy.GetComponent<EnemyHealth>();
+            enemyHealth.TakeDamage(attackDamage);
+            Debug.Log(enemyHealth.currentHealth);
         }
+
+        else
+
+        { return; }
 
 
     }

@@ -13,6 +13,8 @@ public class Enemy_Heritage : MonoBehaviour
     [HideInInspector] public SpriteRenderer spriteR;
     [HideInInspector] public Animator animator;
 
+    [HideInInspector] public GameObject player;
+
     void Awake()
     {
         enemy_Attack =      GetComponent<Enemy_Attack>();
@@ -25,5 +27,7 @@ public class Enemy_Heritage : MonoBehaviour
         rb =                GetComponent<Rigidbody2D>();
         spriteR =           GetComponent<SpriteRenderer>();
         animator =          GetComponent<Animator>();
+
+        player =            GameObject.FindGameObjectWithTag("Player");
     }
 }

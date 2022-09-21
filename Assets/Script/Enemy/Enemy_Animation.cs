@@ -4,27 +4,66 @@ using UnityEngine;
 
 public class Enemy_Animation : Enemy_Heritage
 {
+    public AnimationState animationState = AnimationState.isIdle;
+
     private void Update()
     {
-        Order();
-        MoveAnimation();
+        AnimationMove();
         Flip();
     }
 
-    void Order()
+    void AnimationIdle()
     {
-        spriteR.sortingOrder = Mathf.FloorToInt(transform.position.y);
+        animationState = AnimationState.isIdle;
     }
 
-    void MoveAnimation()
+    void AnimationMove()
     {
-        if (rb.velocity.x != 0 && rb.velocity.y != 0) animator.SetBool("isMoving", true);
-        else animator.SetBool("isMoving", false);
+        if (animationState == AnimationState.isAttacking) return;
+
+        if (rb.velocity.x != 0 && rb.velocity.y != 0)
+        {
+            animationState = AnimationState.isMoving;
+            animator.SetBool("isMoving", true);
+        }else
+        {
+            animationState = AnimationState.isIdle;
+            animator.SetBool("isMoving", false);
+        }
+        
+    }
+
+    public void AnimationAttackStop()
+    {
+        animator.SetBool("isAttacking", false);
+        AnimationIdle();
+    }
+
+    public void AnimationAttack()
+    {
+        animator.SetBool("isAttacking", true);
+
+        if (animationState == AnimationState.isAttacking) return;
+
+        animationState = AnimationState.isAttacking;
+        
+    }
+
+    void AnimationJump()
+    {
+    //    animationState = AnimationState.isJumping;
+     //   animator.SetBool("isJumping", false);
     }
 
     void Flip()
     {
-        if (rb.velocity.x > 0.5f) spriteR.flipX = false;
-        if (rb.velocity.x < -0.5f) spriteR.flipX = true;
+        if (rb.velocity.x > 0.1f) transform.rotation = Quaternion.Euler(0,0,0);
+        if (rb.velocity.x < -0.1f) transform.rotation = Quaternion.Euler(0, 180, 0);
+    }
+
+    public void FlipAttack()
+    {
+        if (player.transform.position.x > transform.position.x) transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (player.transform.position.x < transform.position.x) transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 }

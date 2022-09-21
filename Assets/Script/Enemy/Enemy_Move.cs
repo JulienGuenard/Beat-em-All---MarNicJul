@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Enemy_Move : Enemy_Heritage
@@ -7,18 +8,21 @@ public class Enemy_Move : Enemy_Heritage
     public float speed;
     public float randomMoveDelay;
     public GameObject randomPoint;
-    Vector3 movement;
 
     float x = 0;
     float y = 0;
-
-    GameObject player;
 
     GameObject randomPointCurrent;
     bool canMoveRandomly = true;
 
     void Update()
     {
+        if (enemy_Animation.animationState == AnimationState.isAttacking)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+        
         if (player == null) player = GameObject.FindGameObjectWithTag("Player");
         if (player == null) return;
 
@@ -53,8 +57,10 @@ public class Enemy_Move : Enemy_Heritage
 
         Vector3 direction = (randomPointCurrent.transform.position - transform.position).normalized;
 
-        if (randomPointCurrent.transform.position.magnitude < transform.position.magnitude + 0.1f
-        && randomPointCurrent.transform.position.magnitude > transform.position.magnitude - 0.1f) return;
+        if (randomPointCurrent.transform.position.x < transform.position.x + 0.1f
+        && randomPointCurrent.transform.position.x > transform.position.x - 0.1f
+        && randomPointCurrent.transform.position.y < transform.position.y + 0.1f
+        && randomPointCurrent.transform.position.y > transform.position.y - 0.1f) return;
 
         rb.velocity = direction * speed;
 

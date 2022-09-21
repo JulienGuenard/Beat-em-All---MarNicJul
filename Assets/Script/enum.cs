@@ -21,3 +21,12 @@ public enum EnemyIA_NextAttack
     ThrowItem,
     ThrowPlayer
 }
+
+
+public enum AnimationState
+{
+    isAttacking,
+    isMoving,
+    isJumping,
+    isIdle
+}

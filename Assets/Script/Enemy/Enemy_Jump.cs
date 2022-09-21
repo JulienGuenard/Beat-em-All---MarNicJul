@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Enemy_Jump : Enemy_Heritage
 {
+    public void Jump()
+    {
 
+    }
 }

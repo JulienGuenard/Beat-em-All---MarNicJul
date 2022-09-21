@@ -48,7 +48,7 @@ public class PlayerCombat : MonoBehaviour
 
         // Inflict damage on enemies
         {
-            enemyHealth = attackCollision.selectedEnemy.GetComponent<EnemyHealth>();
+            enemyHealth = attackCollision.selectedEnemy.GetComponentInParent<EnemyHealth>();
             enemyHealth.TakeDamage(attackDamage);
             Debug.Log(enemyHealth.currentHealth);
         }

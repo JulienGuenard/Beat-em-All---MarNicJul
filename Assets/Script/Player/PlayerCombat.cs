@@ -44,13 +44,18 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack1"); // activate trigger in animator
 
         // Detect enemies in range of attack
-        if (attackCollision._canBeAttacked == true)
+        if (attackCollision._getsPunched == true)
 
         // Inflict damage on enemies
         {
-            enemyHealth = attackCollision.selectedEnemy.GetComponentInParent<EnemyHealth>();
-            enemyHealth.TakeDamage(attackDamage);
-            Debug.Log(enemyHealth.currentHealth);
+                        
+            foreach (GameObject enemy in attackCollision.enemyList) // goes through the list of enemies in attack range and inflicts damage on them
+            {
+                enemyHealth = enemy.GetComponentInParent<EnemyHealth>();
+                enemyHealth.TakeDamage(attackDamage);
+                Debug.Log(enemyHealth.currentHealth);
+
+            }            
         }
 
         else

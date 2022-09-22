@@ -45,14 +45,25 @@ public class Enemy_Animation : Enemy_Heritage
 
         if (animationState == AnimationState.isAttacking) return;
 
-        animationState = AnimationState.isAttacking;
-        
+     //   animationState = AnimationState.isAttacking;
+
     }
 
     void AnimationJump()
     {
     //    animationState = AnimationState.isJumping;
      //   animator.SetBool("isJumping", false);
+    }
+
+    public void AnimationDead()
+    {
+        animationState = AnimationState.isDead;
+        animator.SetBool("isDead", true);
+    }
+
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
     }
 
     void Flip()

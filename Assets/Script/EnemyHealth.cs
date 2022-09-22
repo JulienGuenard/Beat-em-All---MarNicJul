@@ -26,6 +26,7 @@ public class EnemyHealth : Enemy_Heritage
 
     private void Die()
     {
+        enemy_Loot.Loot();
         enemy_Animation.AnimationDead();
     }
 }

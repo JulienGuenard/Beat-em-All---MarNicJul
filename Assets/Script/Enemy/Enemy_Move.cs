@@ -18,7 +18,7 @@ public class Enemy_Move : Enemy_Heritage
     void Update()
     {
         if (enemy_Animation.animationState == AnimationState.isAttacking
-            && enemy_Animation.animationState == AnimationState.isDead)
+            || enemy_Animation.animationState == AnimationState.isDead)
         {
             rb.velocity = Vector3.zero;
             return;

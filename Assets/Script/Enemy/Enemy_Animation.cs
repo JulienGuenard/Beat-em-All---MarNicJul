@@ -45,8 +45,8 @@ public class Enemy_Animation : Enemy_Heritage
 
         if (animationState == AnimationState.isAttacking) return;
 
-        animationState = AnimationState.isAttacking;
-        
+     //   animationState = AnimationState.isAttacking;
+
     }
 
     void AnimationJump()

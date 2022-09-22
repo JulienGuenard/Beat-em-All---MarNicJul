@@ -9,6 +9,7 @@ public class Enemy_Heritage : MonoBehaviour
     [HideInInspector] public Enemy_Move enemy_Move;
     [HideInInspector] public Enemy_Throw enemy_Throw;
     [HideInInspector] public Enemy_Animation enemy_Animation;
+    [HideInInspector] public Enemy_Loot enemy_Loot;
 
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public SpriteRenderer spriteR;
@@ -25,6 +26,7 @@ public class Enemy_Heritage : MonoBehaviour
         enemy_Move =        GetComponent<Enemy_Move>();
         enemy_Throw =       GetComponent<Enemy_Throw>();
         enemy_Animation =   GetComponent<Enemy_Animation>();
+        enemy_Loot =        GetComponent<Enemy_Loot>();
 
         rb =                GetComponent<Rigidbody2D>();
         spriteR =           GetComponent<SpriteRenderer>();

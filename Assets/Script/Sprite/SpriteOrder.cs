@@ -12,6 +12,6 @@ public class SpriteOrder : MonoBehaviour
 
     void Order()
     {
-        spriteR.sortingOrder = (Mathf.RoundToInt(transform.position.y * 100f) * -1) - offset;
+        spriteR.sortingOrder = (Mathf.RoundToInt(transform.position.y * 1000f) * -1) - offset;
     }
 }

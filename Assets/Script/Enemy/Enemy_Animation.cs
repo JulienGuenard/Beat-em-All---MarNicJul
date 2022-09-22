@@ -20,6 +20,7 @@ public class Enemy_Animation : Enemy_Heritage
     void AnimationMove()
     {
         if (animationState == AnimationState.isAttacking) return;
+        if (animationState == AnimationState.isJumping) return;
 
         if (rb.velocity.x != 0 && rb.velocity.y != 0)
         {
@@ -49,10 +50,16 @@ public class Enemy_Animation : Enemy_Heritage
 
     }
 
-    void AnimationJump()
+    public void AnimationJump()
     {
-    //    animationState = AnimationState.isJumping;
-     //   animator.SetBool("isJumping", false);
+        animationState = AnimationState.isJumping;
+        animator.SetBool("isJumping", true);
+    }
+
+    public void AnimationJumpStop()
+    {
+        animator.SetBool("isJumping", false);
+        AnimationIdle();
     }
 
     public void AnimationDead()

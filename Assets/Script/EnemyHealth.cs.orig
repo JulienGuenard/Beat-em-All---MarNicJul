@@ -26,8 +26,16 @@ public class EnemyHealth : Enemy_Heritage
 
     private void Die()
     {
-		Debug.Log("Enemy died!");
+<<<<<<< HEAD
+        Debug.Log("Enemy died!");
+        
+        // Die animation
+
+        // despawn object
+
+=======
         enemy_Loot.Loot();
         enemy_Animation.AnimationDead();
+>>>>>>> ca63fae27225d3aed892be2072446e61692aa822
     }
 }

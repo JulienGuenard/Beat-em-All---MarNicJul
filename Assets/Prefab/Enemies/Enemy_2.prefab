@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6867841179669377051}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8504512464104069583
 BoxCollider2D:
@@ -96,10 +96,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3166836001737324608}
+  - {fileID: 1299388647633393118}
   - {fileID: 6209136410816127879}
   - {fileID: 4336837119972168247}
-  - {fileID: 1299388647633393118}
-  - {fileID: 3166836001737324608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -191,6 +191,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteR: {fileID: 0}
   animator: {fileID: 0}
+  attackHit: {fileID: 0}
   player: {fileID: 0}
   enemyIA_Behaviour: 0
   enemyIA_MoveState: 0
@@ -216,6 +217,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteR: {fileID: 0}
   animator: {fileID: 0}
+  attackHit: {fileID: 0}
   player: {fileID: 0}
   speed: 0.35
   randomMoveDelay: 2
@@ -241,6 +243,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteR: {fileID: 0}
   animator: {fileID: 0}
+  attackHit: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &794648833545192291
 MonoBehaviour:
@@ -263,6 +266,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteR: {fileID: 0}
   animator: {fileID: 0}
+  attackHit: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &7657060426608144444
 MonoBehaviour:
@@ -285,6 +289,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteR: {fileID: 0}
   animator: {fileID: 0}
+  attackHit: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &3269528934833575213
 MonoBehaviour:
@@ -307,7 +312,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteR: {fileID: 0}
   animator: {fileID: 0}
+  attackHit: {fileID: 0}
   player: {fileID: 0}
+  damage: 0
 --- !u!114 &2851179277448987820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +336,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   spriteR: {fileID: 0}
   animator: {fileID: 0}
+  attackHit: {fileID: 0}
   player: {fileID: 0}
   animationState: 3
 --- !u!1 &3048432694636197392
@@ -361,7 +369,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6867841179669377051}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8810848643376488390
 BoxCollider2D:
@@ -420,7 +428,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6867841179669377051}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7968138311480356447
 SpriteRenderer:
@@ -519,7 +527,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6867841179669377051}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3600479959862562931
 SpriteRenderer:

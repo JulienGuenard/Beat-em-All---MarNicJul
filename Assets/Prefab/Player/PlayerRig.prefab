@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 883204492817869231}
   m_Layer: 0
   m_Name: PlayerRig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 883204493530409454}
   - component: {fileID: 883204493530409455}
   - component: {fileID: 883204493530409448}
+  - component: {fileID: 8934851314599759505}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -275,6 +276,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8934851314599759505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883204493530409449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae245f73cb1ed64381ed6c865213cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCollider: {fileID: 883204494021702902}
 --- !u!1 &883204494021702902
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &883204494021702901
 Transform:
   m_ObjectHideFlags: 0
@@ -347,5 +361,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCombat: {fileID: 883204492817869231}
-  selectedEnemy: {fileID: 0}
+  enemyList: []
   _canBeAttacked: 0

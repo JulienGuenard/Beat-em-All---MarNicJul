@@ -6,19 +6,21 @@ public class AttackCollision : MonoBehaviour
 {
     public PlayerCombat _playerCombat;
     
-    [HideInInspector] // attribute for hiding variables in the inspector
-    public GameObject selectedEnemy;
+    //[HideInInspector] // attribute for hiding variables in the inspector
+    public List<GameObject> enemyList;
+    
+    
 
     [HideInInspector]
-    public bool _canBeAttacked = false;
+    public bool _getsPunched = false;
     
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
         {
-            Debug.Log("Can be attacked");
-            _canBeAttacked = true;
-            selectedEnemy = other.gameObject;
+            Debug.Log("Gets punched");
+            _getsPunched = true;
+            enemyList.Add(other.gameObject);
         }
 
     }
@@ -28,7 +30,9 @@ public class AttackCollision : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Debug.Log("Can not be attacked");
-            _canBeAttacked = false;
+            _getsPunched = false;
+            enemyList.Remove(other.gameObject);
+
         }
     }
 }

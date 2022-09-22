@@ -36,5 +36,6 @@ public class EnemyHealth : MonoBehaviour
         // Die animation
 
         // despawn object
+
     }
 }

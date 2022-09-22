@@ -28,5 +28,6 @@ public enum AnimationState
     isAttacking,
     isMoving,
     isJumping,
-    isIdle
+    isIdle,
+    isDead
 }

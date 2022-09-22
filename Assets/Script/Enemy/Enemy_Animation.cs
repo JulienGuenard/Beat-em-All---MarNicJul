@@ -55,6 +55,17 @@ public class Enemy_Animation : Enemy_Heritage
      //   animator.SetBool("isJumping", false);
     }
 
+    public void AnimationDead()
+    {
+        animationState = AnimationState.isDead;
+        animator.SetBool("isDead", true);
+    }
+
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
+
     void Flip()
     {
         if (rb.velocity.x > 0.1f) transform.rotation = Quaternion.Euler(0,0,0);

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Heritage : MonoBehaviour
@@ -12,10 +13,11 @@ public class Enemy_Heritage : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public SpriteRenderer spriteR;
     [HideInInspector] public Animator animator;
+    [HideInInspector] public BoxCollider2D attackCollider;
 
     [HideInInspector] public GameObject player;
 
-    void Awake()
+    virtual public void Awake()
     {
         enemy_Attack =      GetComponent<Enemy_Attack>();
         enemy_IA =          GetComponent<Enemy_IA>();
@@ -28,6 +30,9 @@ public class Enemy_Heritage : MonoBehaviour
         spriteR =           GetComponent<SpriteRenderer>();
         animator =          GetComponent<Animator>();
 
-        player =            GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        attackCollider = transform.Find("Attack").GetComponent<BoxCollider2D>();
+        attackCollider.enabled = false;
     }
 }

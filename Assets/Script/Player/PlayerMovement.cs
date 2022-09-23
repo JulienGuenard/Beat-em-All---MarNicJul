@@ -13,13 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _direction;
     private Vector2 _orientation;
 
-    //the different movement speeds
     public float _walkSpeed = 10f;
-    //public float _dashSpeed = 5f;
-    //public float _sprintSpeed = 15f;
 
-    //speed currently effective
-    //public float _currentSpeed;
+    
 
     void Start()
     {
@@ -52,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("isMoving", false);
 
         }
+
+        
 
     }
 

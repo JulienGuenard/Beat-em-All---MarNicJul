@@ -16,6 +16,7 @@ public class Enemy_Jump : Enemy_Heritage
     {
         if (enemy_Animation.animationState == AnimationState.isAttacking) return;
         if (enemy_Animation.animationState == AnimationState.isDead) return;
+        if (enemy_IA.enemyIA_MoveState != EnemyIA_MoveState.FollowPlayer) return;
 
         enemy_Animation.AnimationJump();
     }

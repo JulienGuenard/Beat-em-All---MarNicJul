@@ -34,8 +34,10 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isJumping == false)
         {
             isJumping = true;
-            animator.SetBool("isJumping", true);    
+            animator.SetBool("isJumping", true);
+
         }
+            Debug.Log("Jumping Bool is set to " + isJumping);
     }
 
     

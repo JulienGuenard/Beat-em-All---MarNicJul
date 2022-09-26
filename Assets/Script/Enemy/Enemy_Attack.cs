@@ -6,6 +6,15 @@ using UnityEngine;
 public class Enemy_Attack : Enemy_Heritage
 {
     public float damage;
+    public List<AudioClip> attackSFXList;
+
+    private AudioSource audioS;
+
+    public override void Awake()
+    {
+        base.Awake();
+        audioS = GetComponent<AudioSource>();
+    }
 
     public void Attack()
     {
@@ -16,6 +25,7 @@ public class Enemy_Attack : Enemy_Heritage
 
     public void EnableAttackHit()
     {
+        audioS.PlayOneShot(attackSFXList[Random.Range(0, attackSFXList.Count)]);
         attackCollider.enabled = true;
     }
 

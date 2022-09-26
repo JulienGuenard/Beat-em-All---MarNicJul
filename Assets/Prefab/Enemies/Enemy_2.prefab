@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 2851179277448987820}
   - component: {fileID: 1454481214}
   - component: {fileID: 1454481226}
+  - component: {fileID: 897469012452081579}
   m_Layer: 0
   m_Name: Enemy_2
   m_TagString: Untagged
@@ -397,6 +398,18 @@ MonoBehaviour:
   attackCollider: {fileID: 0}
   player: {fileID: 0}
   damage: 20
+  attackSFXList:
+  - {fileID: 8300000, guid: 0e3a84efc63772a489f78964df4845d1, type: 3}
+  - {fileID: 8300000, guid: c5be2dd7a4a37d14eb4649531a53bf2c, type: 3}
+  - {fileID: 8300000, guid: 166e9980b41af2949a67341f5696fcf9, type: 3}
+  - {fileID: 8300000, guid: 3edfd481a63588249b94fe85ba835f63, type: 3}
+  - {fileID: 8300000, guid: 9d3f973cfbde2ec4bbcddffad5f5116f, type: 3}
+  - {fileID: 8300000, guid: 211f37b993468ac44949e8a426d40487, type: 3}
+  - {fileID: 8300000, guid: a652e0edb64c2b0428733a1617be571f, type: 3}
+  - {fileID: 8300000, guid: 36618daddb646f54f9714c22d3ef7468, type: 3}
+  - {fileID: 8300000, guid: 78e569c94e2bee1409d1650c50f07288, type: 3}
+  - {fileID: 8300000, guid: 1ea28aa1c8b75044ca707b66642c37ad, type: 3}
+  - {fileID: 8300000, guid: c3845b8dedc5d754d8db2c9091e1089f, type: 3}
 --- !u!114 &2851179277448987820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,6 +463,15 @@ MonoBehaviour:
   currentHealth: 0
   lifeBarAnimator: {fileID: 3134228461348016509}
   lifeBarFX: {fileID: 7674334466975935272, guid: 35d192adabebf5543aec2c8647ea03ea, type: 3}
+  hurtSFXList:
+  - {fileID: 8300000, guid: 9e5a59c565342ee4ca217d7b1bb539e3, type: 3}
+  - {fileID: 8300000, guid: 640f71fe3aed70c4ab3b7345b80bc714, type: 3}
+  - {fileID: 8300000, guid: 0494f4f5ea0c3e441be2eac82baf1a72, type: 3}
+  dieSFXList:
+  - {fileID: 8300000, guid: 13fb8b0d26bf72241ac759a0683f148d, type: 3}
+  - {fileID: 8300000, guid: bae4b0cba5b8bb04e859814b3805d3c4, type: 3}
+  - {fileID: 8300000, guid: 9355d24d70a4c0a44a33739c3f791233, type: 3}
+  - {fileID: 8300000, guid: 3e364372dd9def1439c230e52b34ee0f, type: 3}
 --- !u!114 &1454481226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,6 +497,102 @@ MonoBehaviour:
   attackCollider: {fileID: 0}
   player: {fileID: 0}
   loot: {fileID: 11400000, guid: 354e5f431094aaa45bf2751e6019d224, type: 2}
+--- !u!82 &897469012452081579
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2241176898570043898}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3048432694636197392
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3706304496022936107
 Transform:
   m_ObjectHideFlags: 0

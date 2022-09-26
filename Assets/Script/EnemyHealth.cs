@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : Enemy_Heritage
@@ -6,16 +7,21 @@ public class EnemyHealth : Enemy_Heritage
     public int currentHealth;
     public Animator lifeBarAnimator;
     public GameObject lifeBarFX;
+    public List<AudioClip> hurtSFXList;
+    public List<AudioClip> dieSFXList;
+    private AudioSource audioS;
 
     new void Awake()
     {
         base.Awake();
         currentHealth = maxHealth;
         lifeBarAnimator = transform.Find("Graphic").transform.Find("EnemyLifeBar").GetComponent<Animator>();
+        audioS = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
     {
+
         currentHealth -= damage;
         lifeBarAnimator.gameObject.SetActive(true);
         float lifePercent = 1f - ((float)currentHealth / (float)maxHealth);
@@ -28,9 +34,12 @@ public class EnemyHealth : Enemy_Heritage
         if (currentHealth <= 0)
         {
             lifeBarAnimator.gameObject.SetActive(false);
+            audioS.PlayOneShot(dieSFXList[Random.Range(0, dieSFXList.Count)]);
             Die();
+        }else
+        {
+            audioS.PlayOneShot(hurtSFXList[Random.Range(0, hurtSFXList.Count)]);
         }
-
     }
 
     private void Die()

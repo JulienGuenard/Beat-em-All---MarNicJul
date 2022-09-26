@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd5f6555fedeb248ac3145b2c060b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteR: {fileID: 0}
+  spriteR: {fileID: 9150616857619620454}
   offset: -1
 --- !u!1 &9150616857127419775
 GameObject:
@@ -463,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138587431b0614f4fb43a6e0d45da28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealthbar: {fileID: 0}
   lifeMax: 100
 --- !u!114 &5086980627372503486
 MonoBehaviour:

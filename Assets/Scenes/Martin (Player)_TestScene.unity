@@ -288,11 +288,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b26dd5d6731844eba22a0e665c2508, type: 3}
---- !u!1 &377289249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9150616858331111965, guid: f1137a9d316129d41b58f2f367b51ab6, type: 3}
-  m_PrefabInstance: {fileID: 4063672248866837400}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &410309690 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3600479959862562931, guid: d3b26dd5d6731844eba22a0e665c2508, type: 3}
@@ -1958,14 +1953,6 @@ PrefabInstance:
       propertyPath: spriteR
       value: 
       objectReference: {fileID: 722995234}
-    - target: {fileID: 4063672248514321573, guid: f1137a9d316129d41b58f2f367b51ab6, type: 3}
-      propertyPath: lifeMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150616857619620449, guid: f1137a9d316129d41b58f2f367b51ab6, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9150616858331111965, guid: f1137a9d316129d41b58f2f367b51ab6, type: 3}
       propertyPath: m_Name
       value: PlayerTest
@@ -2014,10 +2001,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9150616858331111974, guid: f1137a9d316129d41b58f2f367b51ab6, type: 3}
-      propertyPath: attackDamage
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1137a9d316129d41b58f2f367b51ab6, type: 3}
 --- !u!4 &5086980627372503480 stripped
@@ -2025,42 +2008,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9150616858331111968, guid: f1137a9d316129d41b58f2f367b51ab6, type: 3}
   m_PrefabInstance: {fileID: 4063672248866837400}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5086980627372503486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377289249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cac83c89ba4b674683e0b9a38110db9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -5.6786485
-      outSlope: -5.6786485
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.02880001
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  jumpHeight: 3
-  jumpDuration: 3
-  isJumping: 0

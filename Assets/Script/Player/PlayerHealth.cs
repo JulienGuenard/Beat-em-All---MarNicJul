@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
 
 
 {
+    public PlayerHealthbar playerHealthbar;
+    
     public float lifeMax;
     float lifeCurrent;
 
@@ -13,12 +15,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         lifeCurrent = lifeMax;
+        playerHealthbar.SetMaxHealth(lifeMax);
         animator = GetComponentInChildren<Animator>();
     }
 
     public void LifeCurrentAdd(float value)
     {
         lifeCurrent -= value;
+        playerHealthbar.SetHealth(lifeCurrent);
         animator.SetTrigger("receivedDamage");
 
         if (lifeCurrent <= 0)

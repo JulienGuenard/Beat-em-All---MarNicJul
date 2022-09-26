@@ -9,17 +9,21 @@ public class PlayerJump : MonoBehaviour
     private Animator animator;
 
     //------------------- NOT USED AT THE MOMENT-------------------------------------------------------------------------------------------------------------
-    [SerializeField] AnimationCurve jumpCurve; //curve to define the jumping
+    /*
 
-    [SerializeField] float jumpHeight = 3; // to be able to influence jump height in inspector
+     [SerializeField] AnimationCurve jumpCurve; //curve to define the jumping
 
-    [SerializeField] float jumpDuration = 3f; // to be able to influence jump duration
+     [SerializeField] float jumpHeight = 3; // to be able to influence jump height in inspector
 
-    private Transform graphics;
-    private float jumpTimer; // = x value of the jump curve
+     [SerializeField] float jumpDuration = 3f; // to be able to influence jump duration
+
+     private Transform graphics;
+     private float jumpTimer; // = x value of the jump curve
+
+     */
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    [HideInInspector]
     public bool isJumping = false;
 
     private void Awake()
@@ -45,6 +49,8 @@ public class PlayerJump : MonoBehaviour
 
     
     //------------------- NOT USED AT THE MOMENT-------------------------------------------------------------------------------------------------------------
+   
+    /*
     private void TriggerJumpCurve()
     {
         // implementing the timer
@@ -65,4 +71,5 @@ public class PlayerJump : MonoBehaviour
             jumpTimer = 0f;
         }
     }
+    */
 }

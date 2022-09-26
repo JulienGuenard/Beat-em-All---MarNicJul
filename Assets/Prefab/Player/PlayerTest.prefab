@@ -271,7 +271,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 464c68a293763bc4885db40eee7c57d9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 9150616858331111969}
   - component: {fileID: 9150616858331111974}
   - component: {fileID: 4063672248514321573}
+  - component: {fileID: 5086980627372503486}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollision: {fileID: 9150616857127419522}
-  attackDamage: 5
+  attackDamage: 20
 --- !u!114 &4063672248514321573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,4 +463,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138587431b0614f4fb43a6e0d45da28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeMax: 0
+  lifeMax: 100
+--- !u!114 &5086980627372503486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150616858331111965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac83c89ba4b674683e0b9a38110db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isJumping: 0

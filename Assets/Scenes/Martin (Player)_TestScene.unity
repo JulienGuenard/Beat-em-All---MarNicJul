@@ -2063,3 +2063,4 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpHeight: 3
   jumpDuration: 3
+  isJumping: 0

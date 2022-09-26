@@ -13,12 +13,15 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         lifeCurrent = lifeMax;
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void LifeCurrentAdd(float value)
     {
         lifeCurrent -= value;
-        if(lifeCurrent <= 0)
+        animator.SetTrigger("receivedDamage");
+
+        if (lifeCurrent <= 0)
         {
             Die();
         }
@@ -27,10 +30,10 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
         
     {
-     Debug.Log("Player died!");
      // Play Player Death animation
      animator.SetBool("isDead", true);
 
+     Debug.Log("Player died!");
 
     }
 }

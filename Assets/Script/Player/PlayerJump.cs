@@ -20,7 +20,7 @@ public class PlayerJump : MonoBehaviour
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private bool isJumping = false;
+    public bool isJumping = false;
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class PlayerJump : MonoBehaviour
             animator.SetBool("isJumping", true);
 
         }
-            Debug.Log("Jumping Bool is set to " + isJumping);
+        
     }
 
     

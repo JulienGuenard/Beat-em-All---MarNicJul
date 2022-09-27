@@ -17,6 +17,9 @@ public class PlayerFollowCamera : MonoBehaviour
         Vector3 newPosition = Vector3.Lerp(transform.position, _target.position, _cameraSpeed * Time.deltaTime);
 
         newPosition.z = _cameraOffset;
+        newPosition.y = transform.position.y;
+
+        if (newPosition.x <= 0) newPosition.x = 0;
 
         transform.position = newPosition;
     }

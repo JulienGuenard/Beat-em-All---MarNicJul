@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - RandomPoint
   layers:
   - Default
   - TransparentFX
@@ -39,9 +40,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 2787489383
+    locked: 0
+  - name: BG2
+    uniqueID: 1208370255
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: New Layer 1
     uniqueID: 2352605499
+    locked: 0
+  - name: Ground
+    uniqueID: 2663104197
+    locked: 0
+  - name: Ground2
+    uniqueID: 1474930897
     locked: 0

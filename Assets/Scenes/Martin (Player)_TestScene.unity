@@ -180,6 +180,9 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   lifeBarAnimator: {fileID: 0}
+  lifeBarFX: {fileID: 0}
+  hurtSFXList: []
+  dieSFXList: []
 --- !u!1001 &362924225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -406,6 +409,9 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   lifeBarAnimator: {fileID: 0}
+  lifeBarFX: {fileID: 0}
+  hurtSFXList: []
+  dieSFXList: []
 --- !u!1 &899331047 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3048432694636197392, guid: d3b26dd5d6731844eba22a0e665c2508, type: 3}
@@ -627,6 +633,9 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   lifeBarAnimator: {fileID: 0}
+  lifeBarFX: {fileID: 0}
+  hurtSFXList: []
+  dieSFXList: []
 --- !u!1 &1095969247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1015,9 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   lifeBarAnimator: {fileID: 0}
+  lifeBarFX: {fileID: 0}
+  hurtSFXList: []
+  dieSFXList: []
 --- !u!114 &1454481226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,6 +1238,9 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   lifeBarAnimator: {fileID: 0}
+  lifeBarFX: {fileID: 0}
+  hurtSFXList: []
+  dieSFXList: []
 --- !u!1 &1696198706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2241176898570043898, guid: d3b26dd5d6731844eba22a0e665c2508, type: 3}
@@ -1283,6 +1298,9 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   lifeBarAnimator: {fileID: 0}
+  lifeBarFX: {fileID: 0}
+  hurtSFXList: []
+  dieSFXList: []
 --- !u!1001 &1713938038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1783,6 +1801,9 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   lifeBarAnimator: {fileID: 0}
+  lifeBarFX: {fileID: 0}
+  hurtSFXList: []
+  dieSFXList: []
 --- !u!1001 &2102703837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1916,6 +1937,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1347955314691413637, guid: 944e4e9ee90e665438a0ad52e7fa0ffb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347955314691413637, guid: 944e4e9ee90e665438a0ad52e7fa0ffb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.77254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347955314691413637, guid: 944e4e9ee90e665438a0ad52e7fa0ffb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.08235294
+      objectReference: {fileID: 0}
     - target: {fileID: 1347955314691413638, guid: 944e4e9ee90e665438a0ad52e7fa0ffb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

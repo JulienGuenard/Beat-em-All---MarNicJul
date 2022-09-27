@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 
 {
     public PlayerHealthbar playerHealthbar;
+    public PlayerMovement playerMovement;
     
     public float lifeMax;
     float lifeCurrent;
@@ -36,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
     {
      // Play Player Death animation
      animator.SetBool("isDead", true);
+     playerMovement.enabled = false;
 
      Debug.Log("Player died!");
 

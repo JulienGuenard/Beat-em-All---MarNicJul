@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthbar: {fileID: 0}
+  playerMovement: {fileID: 9150616858331111969}
   lifeMax: 100
 --- !u!114 &5086980627372503486
 MonoBehaviour:

@@ -27,10 +27,6 @@ public class EnemyHealth : Enemy_Heritage
         float lifePercent = 1f - ((float)currentHealth / (float)maxHealth);
         lifeBarAnimator.Play("LifeBar_Fill", 0, lifePercent);
 
-        GameObject fx = Instantiate(lifeBarFX, lifeBarAnimator.transform.position, Quaternion.identity);
-        fx.transform.SetParent(lifeBarAnimator.transform);
-        fx.transform.localScale = new Vector3(1, 1, 1);
-
         if (currentHealth <= 0)
         {
             lifeBarAnimator.gameObject.SetActive(false);
@@ -39,6 +35,8 @@ public class EnemyHealth : Enemy_Heritage
         }else
         {
             audioS.PlayOneShot(hurtSFXList[Random.Range(0, hurtSFXList.Count)]);
+            GameObject fx = Instantiate(lifeBarFX, lifeBarAnimator.transform.position, Quaternion.identity);
+            fx.transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
